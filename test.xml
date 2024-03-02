@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api xmlns="http://ws.apache.org/ns/synapse" name="SampleAPIService" context="/sample">
+    <resource methods="GET" url-mapping="/hello">
+        <inSequence>
+            <log level="custom">
+                <property name="message" value="Executing SampleAPIService"/>
+            </log>
+            <payloadFactory media-type="json">
+                <format>{"message": "Hello, World!"}</format>
+                <args/>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>
